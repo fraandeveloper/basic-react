@@ -14,28 +14,21 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
 
   <script type="text/babel">
-  // const name = 'Francisco barros';
-  // const elementH1 = <h1>Hello, { name }</h1>;
+  const tick = () => {
+    const element = (
+      <section>
+        <h1>Hello, world!</h1>
+        <h2>It is { new Date().toLocaleTimeString() }</h2>
+      </section>
+    );
 
-  //   ReactDOM.render(
-  //     elementH1,
-  //     document.getElementById('root')
-  //   );
-
-  const formatName = ({ firstName, lastName}) => {
-    return firstName + ' ' + lastName;
+    ReactDOM.render(
+      element,
+      document.getElementById('root')
+    );
   }
 
-  const user = { firstName: 'Francisco', lastName: 'Barros' };
-
-  const element = (
-    <h1 className="react-container">Hello, { formatName(user) }</h1>
-  );
-
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  );
+  setInterval(tick, 1000);
   </script>
 </body>
 </html>
